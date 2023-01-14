@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Brexit flags
+set -eu
+
+# Ensure stdout and stderr are discarded
+exec &>/dev/null
+
+# Execute the real ctxwebhelper
+"$(dirname "$0")"/ctxwebhelper.real "$@"
