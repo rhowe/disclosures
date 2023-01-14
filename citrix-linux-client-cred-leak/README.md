@@ -74,7 +74,7 @@ First, rename `ctxwebhelper`:
 
     mv /opt/Citrix/ICAClient/util/ctxwebhelper /opt/Citrix/ICAClient/util/ctxwebhelper.real
 
-Next, place a script in its place, which first redirects stdout and stderr to /dev/null before exsecuting the real `ctxwebhelper`:
+Next, place a script in its place, which first redirects stdout and stderr to /dev/null before executing the real `ctxwebhelper`:
 
     #!/bin/bash
     set -eu
