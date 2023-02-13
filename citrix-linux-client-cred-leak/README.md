@@ -5,9 +5,14 @@ session. These credentials end up being recorded in the client's system log.
 
 Citrix do not consider this to be a security vulnerability.
 
+## References
+
+- [VulDB VDB-218413](https://vuldb.com/?id.218413)
+- [FullDisclosure](https://seclists.org/fulldisclosure/2023/Jan/6)
+
 # Software affected
 
-- Citrix Workspace App for Linux versions 2212.
+- Citrix Workspace App for Linux versions 2212 and 2302.
 
 Other versions are likely affected.
 
@@ -63,6 +68,8 @@ Citrix responded to my report on 2023-01-05 to say they do not consider this a p
 This is short-sighted in my opinion - logs should not be considered safe places
 to store credentials, even temporary ones.
 
+This is an example of [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html).
+
 # Workaround
 
 Since Citrix do not consider this a vulnerability it seems unlikely this behaviour will change.
@@ -97,7 +104,9 @@ Note that this will be overwritten if the Citrix client is reinstalled.
 
 2023-01-07: Reply to Citrix requesting they reconsider their assessment.
 
-2023-01-14: Public disclosure.
+2023-01-14: Submitted to Full Disclosure mailing list.
+
+2023-01-16: Submitted to VulDB, assigned [VDB-218413](https://vuldb.com/?id.218413).
 
 # Author
 
