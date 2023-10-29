@@ -110,6 +110,9 @@ of the client.
 
 2023-03-10: Writeup published.
 
+2023-10-29: Contact Citrix to say the issue was not fully resolved, with
+publication set at 45 days, 13 Dec 2023
+
 # Author
 
 Russell Howe. [Github](https://github.com/rhowe) [Twitter](https://twitter.com/rhowe212).
