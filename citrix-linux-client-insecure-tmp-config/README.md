@@ -13,7 +13,7 @@ Other versions are likely affected.
 
 I have not tested clients for other operating systems.
 
-The issue is resolved in Citrix Workspace App for Linux 2302.
+The issue is partially resolved in Citrix Workspace App for Linux 2302.
 
 # Context
 
@@ -56,7 +56,7 @@ the process exits.
 # Vendor response
 
 Citrix acknowledged the bug, confirmed it as a security vulnerability and issued
-a fixed client in February 2023. A CVE was assigned.
+an updated client in February 2023. A CVE was assigned.
 
 Citrix security bulletin
 [CTX477618](https://support.citrix.com/article/CTX477618) contains their
@@ -71,6 +71,22 @@ If there are alternative ways to obtain the ICA file which do not depend on
 receiver:// URLs it is possible they are unaffected by this issue.
 
 Upgrade to version 2302 or later.
+
+# Incomplete fix
+
+The updated made in the February 2023 Citrix client is only a partial fix - the
+updated client first tries to write the retrieved ICA file to the `.ICAClient`
+directory in the user's home directory but if that fails for any reason, the
+client falls back to the previous insecure behaviour of writing it to /tmp,
+world-readable.
+
+This can be demonstrated by creating a non-writable `.ICAClient` directory and
+then launching a connection:
+
+    mkdir -p ~/.ICAClient
+    chmod u-wx ~/.ICAClient
+
+I informed Citrix of this on 29 Oct 2023 but no update was forthcoming.
 
 # Timeline
 
@@ -113,6 +129,7 @@ of the client.
 2023-10-29: Contact Citrix to say the issue was not fully resolved, with
 publication set at 45 days, 13 Dec 2023
 
+2023-12-15: Published update detailing the incompleteness of the fix.
 # Author
 
 Russell Howe. [Github](https://github.com/rhowe) [Twitter](https://twitter.com/rhowe212).
